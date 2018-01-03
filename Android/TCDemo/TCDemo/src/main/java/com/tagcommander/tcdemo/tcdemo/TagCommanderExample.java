@@ -8,6 +8,7 @@ import com.tagcommander.lib.TCLocation;
 import com.tagcommander.lib.TagCommander;
 import com.tagcommander.lib.core.TCDebug;
 import com.tagcommander.lib.core.TCPermissions;
+import com.tagcommander.lib.privacy.TCPrivacy;
 
 public class TagCommanderExample
 {
@@ -51,6 +52,8 @@ public class TagCommanderExample
             {
                 TCLocation.getInstance(context);
             }
+
+            TCPrivacy.getInstance().setSiteIDAppContext(TC_SITE_ID, context);
         }
     }
 

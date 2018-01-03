@@ -16,10 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 
 import com.tagcommander.lib.TCLocation;
-import com.tagcommander.lib.TagCommander;
 import com.tagcommander.lib.core.TCPermissions;
-
-import static com.tagcommander.tcdemo.tcdemo.MainActivity.LOCATION_PERMISSION;
 
 /*
  * The purpose of TCDemo is to show you how to tag easily an Android application
@@ -53,7 +50,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         /**
          * Init the Tag Module first thing in your application.
          */
-
         TagCommanderExample.sharedTagManager().initTagcommander(this.getApplicationContext());
 
         // Set up the action bar.
@@ -159,19 +155,24 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         {
             // getItem is called to instantiate the fragment for the given page.
             Fragment fragment;
-            if (position == 1)
+            if (position == 0)
+            {
+                fragment = new RestaurantListFragment();
+            }
+            else if (position == 1)
             {
                 fragment = new MapFragment();
             }
             else
             {
-                fragment = new RestaurantListFragment();
+                fragment = new PrivacyFragment();
             }
+
             return fragment;
         }
 
         @Override
-        public int getCount() { return 2; }
+        public int getCount() { return 3; }
 
         @Override
         public CharSequence getPageTitle(int position)
@@ -183,7 +184,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 case 1:
                     return getString(R.string.title_map);
                 case 2:
-                    return getString(R.string.title_settings);
+                    return getString(R.string.title_privacy);
             }
             return null;
         }

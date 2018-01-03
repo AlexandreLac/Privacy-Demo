@@ -26,8 +26,6 @@ public class RestaurantDetail extends Activity implements View.OnClickListener
         Intent intentObject = getIntent();
         id = intentObject.getIntExtra("ID", 0);
 
-        if (id == 2) TagCommanderExample.sharedTagManager().stopSDK();
-
         TextView nameText = (TextView) this.findViewById(R.id.name_text);
         nameText.setText(Restaurants.TITLES[id]);
 

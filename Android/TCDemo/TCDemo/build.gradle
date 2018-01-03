@@ -1,25 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.tagcommander.tcdemo.tcdemo"
-        minSdkVersion 11
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 414
         versionName "4.2.01"
     }
 }
 
 dependencies {
-//    compile 'com.tagcommander.lib:core:4.1.0'
-//    compile 'com.tagcommander.lib:SDK:4.1.0'
-    compile (name:'core-release', ext:'aar')
-    compile (name:'SDK-release', ext:'aar')
+    compile(name: 'core-release', ext: 'aar')
+    compile(name: 'SDK-release', ext: 'aar')
+    compile(name: 'privacy-release', ext: 'aar')
 
-    compile 'com.google.android.gms:play-services-location:10.0.0'
-    compile 'com.google.android.gms:play-services-maps:10.0.0'
-    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.google.android.gms:play-services-location:11.8.0'
+    compile 'com.google.android.gms:play-services-maps:11.8.0'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:support-v4:27.0.2'
 }
