@@ -1,0 +1,3 @@
+#include "Project.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = TC.TCPrivacy
