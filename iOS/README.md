@@ -6,3 +6,5 @@ In this project you should especially check the following files:
 [TCAppDelegate.m : application: didFinishLaunchingWithOptions:](TCDemo/TCDemo/TCAppDelegate.m)
 
 [TagCommanderExample.m](TCDemo/TCDemo/TagCommanderExample.m)
+
+[TCPrivacyController.m](TCDemo/TCDemo/TCPrivacyController.m)
