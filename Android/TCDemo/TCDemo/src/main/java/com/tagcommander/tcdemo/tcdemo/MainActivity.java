@@ -17,6 +17,7 @@ import android.view.Menu;
 
 import com.tagcommander.lib.TCLocation;
 import com.tagcommander.lib.core.TCPermissions;
+import com.tagcommander.lib.privacy.TCPrivacy;
 
 /*
  * The purpose of TCDemo is to show you how to tag easily an Android application
@@ -40,6 +41,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     Double latitude = 0.0;
     Double longitude = 0.0;
     static final int LOCATION_PERMISSION = 1;
+    int privacyShown = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +53,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
          * Init the Tag Module first thing in your application.
          */
         TagCommanderExample.sharedTagManager().initTagcommander(this.getApplicationContext());
+        TCPrivacy.getInstance().fetchPrivacyPopUp("http://marieetpierre.com/", getBaseContext());
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -128,6 +131,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 TagCommanderExample.buildPageName("Menu", "", "", tab.getText().toString()),
                 "click"
         );
+
+        privacyShown++;
+        if (privacyShown == 2)
+        {
+            TCPrivacy.getInstance().displayPopUp(this);
+        }
 
         mViewPager.setCurrentItem(tab.getPosition());
     }
