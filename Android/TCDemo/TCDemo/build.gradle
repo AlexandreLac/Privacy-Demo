@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.tagcommander.tcdemo.tcdemo"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 27
         versionCode 414
         versionName "4.2.01"

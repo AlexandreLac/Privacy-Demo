@@ -61,6 +61,7 @@ public class PrivacyFragment extends Fragment implements View.OnClickListener
                 if (this.togglePrivacy.isChecked())
                 {
                     TCPrivacy.getInstance().enableSDK();
+                    TagCommanderExample.sharedTagManager().setCategories();
                 }
                 else
                 {

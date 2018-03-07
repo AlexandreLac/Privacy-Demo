@@ -54,6 +54,7 @@ public class TagCommanderExample
             }
 
             TCPrivacy.getInstance().setSiteIDAppContext(TC_SITE_ID, context);
+            TCPrivacy.getInstance().enableSDK();
         }
     }
 
@@ -142,5 +143,10 @@ public class TagCommanderExample
     public void stopSDK()
     {
 //        TC.disableSDK();
+    }
+
+    public void setCategories()
+    {
+        TC.addPrivacyData(TCPrivacy.getInstance().setCategoriesFromCookies("https://preprod.tagcommander.com/~jeanjulien/jjz.html"));
     }
 }
