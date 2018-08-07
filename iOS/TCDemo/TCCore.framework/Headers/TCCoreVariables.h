@@ -18,6 +18,9 @@ SINGLETON_CLASS_H(TCCoreVariables)
 #endif
 - (id) reinit;
 
+- (void) setIDFV;
+- (void) setIDFA;
+
 @property (nonatomic, retain) TCDynamicStore *dynamicStore;
 @property (nonatomic, assign) bool enableSDKInBG;
 

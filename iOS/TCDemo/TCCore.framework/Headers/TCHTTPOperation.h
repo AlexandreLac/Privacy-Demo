@@ -9,6 +9,7 @@
 
 - (id) initWithData: (NSDictionary *) userInfo;
 - (NSString *) getContentOfData: (NSData *) data;
+- (void) addPostData: (NSString *) postData;
 
 @property (nonatomic, retain) NSMutableDictionary *userInfo;
 /** the corresponding userInfo in the NSNotification */

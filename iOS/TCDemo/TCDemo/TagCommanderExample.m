@@ -23,8 +23,8 @@
     [TCDebug setNotificationLog: YES];
 
     TagCommander *tc = [[TagCommander alloc] initWithSiteID: siteID andContainerID: containerID];
-    [[TCMobilePrivacy sharedInstance] SetSiteID: siteID];
-
+    
+    [[TCMobilePrivacy sharedInstance] setSiteID: siteID TCInstance: tc AndVersion: @"001"];
     return tc;
 }
 

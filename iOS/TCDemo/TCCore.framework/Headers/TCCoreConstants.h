@@ -58,6 +58,7 @@ extern NSString *const kTCNotification_OnForeground;
 extern NSString *const kTCNotification_Unknown;
 extern NSString *const kTCNotification_StoppingTheSDK;
 extern NSString *const kTCNotification_StartingTheSDK;
+extern NSString *const kTCNotification_ConsentOutdated;
 
 #pragma mark - notification userInfo
 extern NSString *const kTCUserInfo_DataKey;

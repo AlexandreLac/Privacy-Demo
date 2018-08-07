@@ -107,29 +107,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     protected void onStart()
     {
         super.onStart();
-
-        TCPrivacy.getInstance().fetchPrivacyPopUp("https://preprod.tagcommander.com/~jeanjulien/jjz.html", getBaseContext());
-//        TCPrivacy.getInstance().fetchPrivacyPopUp("http://www.2marieetpierre.com/jjz.html", getBaseContext());
-//        TCPrivacy.getInstance().fetchPrivacyPopUp("http://preprod.tagcommander.com/~jeanjulien/test_nohtml.js", getBaseContext());
-//        TCPrivacy.getInstance().displayPopUp(this);2
     }
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction)
     {
-        // When the given tab is selected, switch to the corresponding page in the ViewPager.
-        Log.d("DEBUG", "onTabSelected: " + tab.getText());
-        privacyShown++;
-        if (privacyShown == 2)
-        {
-            TCPrivacy.getInstance().displayPopUp(this);
-        }
-
-//        if (privacyShown > 2)
-//        {
-//            TCPrivacy.getInstance().setCategoriesFromCookies("https://preprod.tagcommander.com/~jeanjulien/jjz.html");
-//        }
-
         /*
 		 * Here we are getting the page name we want to send to the hit
 		 */

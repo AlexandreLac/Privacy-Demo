@@ -10,6 +10,9 @@ import android.widget.ToggleButton;
 
 import com.tagcommander.lib.privacy.TCPrivacy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PrivacyFragment extends Fragment implements View.OnClickListener
 {
     ToggleButton togglePrivacy;
@@ -41,6 +44,13 @@ public class PrivacyFragment extends Fragment implements View.OnClickListener
     }
 
     @Override
+    public void onResume()
+    {
+        super.onResume();
+        TCPrivacy.getInstance().viewConsent();
+    }
+
+    @Override
     public void onAttach(Context context)
     {
         super.onAttach(context);
@@ -60,12 +70,17 @@ public class PrivacyFragment extends Fragment implements View.OnClickListener
             case R.id.togglePrivacy:
                 if (this.togglePrivacy.isChecked())
                 {
-                    TCPrivacy.getInstance().enableSDK();
-                    TagCommanderExample.sharedTagManager().setCategories();
+                    Map<String, String> consent = new HashMap<>();
+                    consent.put("PRIVACY_CAT_1", "1");
+                    consent.put("PRIVACY_CAT_2", "1");
+                    TCPrivacy.getInstance().saveConsent(consent);
                 }
                 else
                 {
-                    TCPrivacy.getInstance().disableSDK();
+                    Map<String, String> consent = new HashMap<>();
+                    consent.put("PRIVACY_CAT_1", "0");
+                    consent.put("PRIVACY_CAT_2", "0");
+                    TCPrivacy.getInstance().saveConsent(consent);
                 }
                 break;
         }

@@ -53,8 +53,9 @@ public class TagCommanderExample
                 TCLocation.getInstance(context);
             }
 
-            TCPrivacy.getInstance().setSiteIDAppContext(TC_SITE_ID, context);
-            TCPrivacy.getInstance().enableSDK();
+            TC.addPermanentData("MY_ID", "12345");
+            TCPrivacy.getInstance().setSiteIDAppContextAndTCInstance(TC_SITE_ID, context, TC);
+            TCPrivacy.getInstance().setUserID("MY_ID");
         }
     }
 
@@ -138,15 +139,5 @@ public class TagCommanderExample
         appVars.put("#PAGE_NAME#", pageName);
 
         TC.execute(appVars);
-    }
-
-    public void stopSDK()
-    {
-//        TC.disableSDK();
-    }
-
-    public void setCategories()
-    {
-        TC.addPrivacyData(TCPrivacy.getInstance().setCategoriesFromCookies("https://preprod.tagcommander.com/~jeanjulien/jjz.html"));
     }
 }

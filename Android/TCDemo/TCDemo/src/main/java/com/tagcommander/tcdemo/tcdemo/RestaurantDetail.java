@@ -26,19 +26,19 @@ public class RestaurantDetail extends Activity implements View.OnClickListener
         Intent intentObject = getIntent();
         id = intentObject.getIntExtra("ID", 0);
 
-        TextView nameText = (TextView) this.findViewById(R.id.name_text);
+        TextView nameText = this.findViewById(R.id.name_text);
         nameText.setText(Restaurants.TITLES[id]);
 
-        TextView typeText = (TextView) this.findViewById(R.id.type_text);
+        TextView typeText = this.findViewById(R.id.type_text);
         typeText.setText(Restaurants.TYPES[id]);
 
-        RatingBar rating = (RatingBar) this.findViewById(R.id.rating_bar);
+        RatingBar rating = this.findViewById(R.id.rating_bar);
         rating.setProgress(Restaurants.RATINGS[id]);
 
-        RatingBar waiting = (RatingBar) this.findViewById(R.id.wait_bar);
+        RatingBar waiting = this.findViewById(R.id.wait_bar);
         waiting.setProgress(Restaurants.WAITTIME[id]);
 
-        ImageView image = (ImageView) this.findViewById(R.id.photo_image);
+        ImageView image = this.findViewById(R.id.photo_image);
         image.setImageResource(Restaurants.PHOTO[id]);
 
         TagCommanderExample.sharedTagManager().SendPageEvent(TagCommanderExample.buildPageName("restaurant", "", "", Restaurants.TITLES[id]),
@@ -87,8 +87,8 @@ public class RestaurantDetail extends Activity implements View.OnClickListener
                 break;
 
             case R.id.send_btn:
-                RatingBar rating = (RatingBar) this.findViewById(R.id.rating_bar);
-                RatingBar waiting = (RatingBar) this.findViewById(R.id.wait_bar);
+                RatingBar rating = this.findViewById(R.id.rating_bar);
+                RatingBar waiting = this.findViewById(R.id.wait_bar);
                 String ratingVal = TCSharedPreferences.retrieveInfoFromSharedPreferences("rating" + id, this.getApplicationContext());
 
                 if (!ratingVal.isEmpty() && Float.parseFloat(ratingVal) != rating.getRating())

@@ -13,7 +13,12 @@
 
 @interface TCPrivacyConstants : NSObject
 
-extern NSString *const kTCDefaultUserConsent;
+extern NSString *const kTCConsentTime;
+extern NSString *const kTCPrivacyConsent;
+extern NSString *const kTCCategoryPrefix;
+extern NSString *const kTCSavedCategories;
+
+extern unsigned long long const kTCConsentExpirationDuration;
 
 @end
 

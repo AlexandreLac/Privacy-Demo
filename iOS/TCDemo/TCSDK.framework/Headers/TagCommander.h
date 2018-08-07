@@ -39,7 +39,6 @@
 - (void) addData: (NSString *) key withProduct: (TCProduct *) product;
 
 - (NSString *) getPostData: (TCAppVars *) appVars;
-- (void) disableSDK;
 - (void) enableRunningInBackground;
 
 #pragma mark - public properties

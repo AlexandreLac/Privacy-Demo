@@ -201,7 +201,6 @@
 		6D4434AC1718055000867B6F = {
 			isa = PBXGroup;
 			children = (
-				90C028811FFD2F520046EC64 /* TCPrivacy.framework */,
 				6DB9464B17184DE0009C723E /* Frameworks */,
 				6D4434D91718062500867B6F /* Ressources */,
 				6D4434BE1718055000867B6F /* TCDemo */,
@@ -274,6 +273,7 @@
 		6DB9464B17184DE0009C723E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90C028811FFD2F520046EC64 /* TCPrivacy.framework */,
 				90FC7DAA1FD01A29001E5333 /* CoreGraphics.framework */,
 				90FC7DA81FD01882001E5333 /* WebKit.framework */,
 				90BC899E1DD1DF700007C151 /* TCCore.framework */,

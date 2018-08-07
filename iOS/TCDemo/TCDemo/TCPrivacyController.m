@@ -17,11 +17,19 @@
 
     if ([mySwitch isOn])
     {
-        [[TCMobilePrivacy sharedInstance] enableSDK];
+        NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
+        [consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
+        [consent setObject: @"1" forKey: @"PRIVACY_CAT_2"];
+        [consent setObject: @"0" forKey: @"PRIVACY_CAT_3"];
+        [[TCMobilePrivacy sharedInstance] saveConsent: consent];
     }
     else
     {
-        [[TCMobilePrivacy sharedInstance] disableSDK];
+        NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
+        [consent setObject: @"0" forKey: @"PRIVACY_CAT_1"];
+        [consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
+        [consent setObject: @"0" forKey: @"PRIVACY_CAT_3"];
+        [[TCMobilePrivacy sharedInstance] saveConsent: consent];
     }
 }
 
@@ -31,6 +39,12 @@
     [self.privacySwitch addTarget: self
                            action: @selector(switchToggled:)
                  forControlEvents: UIControlEventTouchUpInside];
+}
+
+- (void) viewDidAppear: (BOOL) animated
+{
+    [super viewDidAppear: animated];
+    [[TCMobilePrivacy sharedInstance] viewConsent];
 }
 
 @end

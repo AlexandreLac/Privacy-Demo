@@ -16,6 +16,6 @@ FOUNDATION_EXPORT const unsigned char TCPrivacyVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TCPrivacy/PublicHeader.h>
 
-#import <TCSegment/TCMobilePrivacy.h>
-#import <TCSegment/TCPrivacyConstants.h>
-#import <TCSegment/PrivacyGenerated.h>
+#import <TCPrivacy/TCMobilePrivacy.h>
+#import <TCPrivacy/TCPrivacyConstants.h>
+#import <TCPrivacy/PrivacyGenerated.h>

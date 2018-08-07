@@ -52,6 +52,7 @@
     @property (nonatomic, retain) TCEventSender *senderDelegate;
     @property (nonatomic, retain) TCEventListener *listenerDelegate;
     @property (strong) NSOperationQueue *operationQueue;
+    @property (strong) NSOperationQueue *consentQueue;
 
     @property (nonatomic, assign, readonly) unsigned int nextRequestID;
     @property (nonatomic, assign, readonly) unsigned int totalRequestSent;
