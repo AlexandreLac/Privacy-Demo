@@ -22,7 +22,6 @@ dependencies {
     implementation(name: 'core-release', ext: 'aar')
     implementation(name: 'privacy-release', ext: 'aar')
     implementation(name: 'SDK-release', ext: 'aar')
-    implementation(name: 'gdpr_android-release', ext: 'aar')
 
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'

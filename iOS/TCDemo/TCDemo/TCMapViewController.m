@@ -48,7 +48,6 @@
 - (void) viewDidAppear: (BOOL) animated
 {
     [super viewDidAppear: animated];
-    //[TagCommanderExample TCLaunchTiming];
 
     dispatch_async(dispatch_get_main_queue(), ^{
         // Create the location manager if this object does not
@@ -154,7 +153,6 @@
         if (annotationView == nil)
         {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: identifier];
-            //   annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
 
             UIButton *button = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
             button.frame = CGRectMake(0, 0, 24, 24);

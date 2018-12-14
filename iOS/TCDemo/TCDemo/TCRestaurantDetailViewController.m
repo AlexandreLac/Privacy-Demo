@@ -10,34 +10,6 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-//    self.webView2 = [[UIWebView alloc] initWithFrame: self.view.frame];
-//    [self.webView2 setUserInteractionEnabled: true];
-//    [self.webView2 setMultipleTouchEnabled: true];
-//    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-
-//    self.webView = [[WKWebView alloc] initWithFrame: self.view.frame configuration: theConfiguration];
-//    [self.webView setNavigationDelegate: self];
-//    [self.webView setUIDelegate: self];
-//    [self.webView setUserInteractionEnabled: true];
-//    [self.webView setAllowsBackForwardNavigationGestures: true];
-//    [self.webView setExclusiveTouch: true];
-//    [self.webView setMultipleTouchEnabled: true];
-
-//    NSURL *nsurl = [NSURL URLWithString: @"http://marieetpierre.com/jjz.html"];
-//    NSURLRequest *nsrequest = [NSURLRequest requestWithURL: nsurl];
-//    [self.webView loadRequest: nsrequest];
-
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"No network connection"
-//                                                    message: @"You must be connected to the internet to use this app."
-//                                                   delegate: nil
-//                                          cancelButtonTitle: @"OK"
-//                                          otherButtonTitles: nil];
-//    [alert show];
-//    [self.webViewContainer addSubview: self.webView];
-//    [self.webView2 loadRequest: nsrequest];
-//    [self.webViewContainer addSubview: self.webView2];
-//    [self saveHTTPCookies];
 }
 
 - (void) loadHTTPCookies
@@ -67,22 +39,9 @@
         [cookieProperties setObject: [NSNumber numberWithUnsignedInteger:cookie.version] forKey: NSHTTPCookieVersion];
         [cookieProperties setObject: [[NSDate date] dateByAddingTimeInterval: 2629743] forKey: NSHTTPCookieExpires];
         
-//        [[NSUserDefaults standardUserDefaults] setValue: cookieProperties forKey: cookie.name];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"%@: %@", cookie.name, cookieProperties);
     }
-    
-//    [[NSUserDefaults standardUserDefaults] setValue: cookieArray forKey: @"cookieArray"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-//- (void) webView: (WKWebView *) webView decidePolicyForNavigationAction: (WKNavigationAction *) navigationAction decisionHandler: (void (^) (WKNavigationActionPolicy)) decisionHandler
-//{
-//    NSLog(@"JJ: decidePolicyForNavigationAction ? ");
-//
-//        decisionHandler(WKNavigationActionPolicyAllow);
-////        decisionHandler(WKNavigationActionPolicyCancel);
-//}
 
 - (void) viewDidAppear: (BOOL) animated
 {
@@ -96,8 +55,6 @@
     [TagCommanderExample sendScreenEvent: screenName
                           withRestaurant: self.detailTitleLabel.text
                                andRating: [NSString stringWithFormat: @"%d", (int) (self.detailRatingSlider.value)]];
-    
-//    [[TagCommanderExample getTagcommander] disableSDK];
 }
 
 #pragma mark - Managing the detail item
@@ -183,7 +140,6 @@
     smallPopupView.alpha = 0.0;
     smallPopupView.layer.cornerRadius = 5;
     smallPopupView.layer.borderWidth = 1.5f;
-    //customView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), YourColorValues);
     smallPopupView.layer.masksToBounds = YES;
 }
 
