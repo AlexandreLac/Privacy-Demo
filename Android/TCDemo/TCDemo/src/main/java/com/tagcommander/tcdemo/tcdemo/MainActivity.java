@@ -12,12 +12,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 
-import com.tagcommander.lib.TCLocation;
 import com.tagcommander.lib.core.TCPermissions;
-import com.tagcommander.lib.privacy.TCPrivacy;
 
 /*
  * The purpose of TCDemo is to show you how to tag easily an Android application
@@ -33,7 +30,6 @@ import com.tagcommander.lib.privacy.TCPrivacy;
  * Again this application was design to show common usage
  * so you will find some of those functions called in TCDemo
  */
-
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener
 {
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -208,7 +204,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     // permission was granted, yay!
                     if (TCPermissions.checkForPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION))
                     {
-                        TCLocation.getInstance(getApplicationContext());
+//                        TCLocation.getInstance(getApplicationContext());
                     }
                 }
             }

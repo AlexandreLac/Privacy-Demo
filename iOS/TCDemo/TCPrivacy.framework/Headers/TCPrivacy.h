@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char TCPrivacyVersionString[];
 #import <TCPrivacy/TCMobilePrivacy.h>
 #import <TCPrivacy/TCPrivacyConstants.h>
 #import <TCPrivacy/PrivacyGenerated.h>
+#import <TCPrivacy/TCPrivacyCenterViewController.h>

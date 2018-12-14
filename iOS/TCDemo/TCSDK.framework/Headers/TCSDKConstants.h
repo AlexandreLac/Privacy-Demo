@@ -33,7 +33,6 @@ extern NSString *const kTCNotification_HitSent;
 extern NSString *const kTCServerSideURL;
 
 #pragma mark - predefined dynamic variables
-extern NSString *const kTCPredefinedVariable_IP;
 extern NSString *const kTCPredefinedVariable_Empty;
 extern NSString *const kTCPredefinedVariable_Random;
 
@@ -45,6 +44,7 @@ extern NSString *const kTCPredefinedVariable_SystemVersion;
 extern NSString *const kTCPredefinedVariable_Model;
 extern NSString *const kTCPredefinedVariable_ModelAndVersion;
 extern NSString *const kTCPredefinedVariable_Device;
+extern NSString *const kTCPredefinedVariable_IP;
 
 extern NSString *const kTCPredefinedVariable_ScreenResolution;
 extern NSString *const kTCPredefinedVariable_Charset;
@@ -55,7 +55,6 @@ extern NSString *const kTCPredefinedVariable_ApplicationPreviousVersion;
 extern NSString *const kTCPredefinedVariable_ApplicationBuild;
 extern NSString *const kTCPredefinedVariable_TagCommanderVersion;
 extern NSString *const kTCPredefinedVariable_Manufacturer;
-extern NSString *const kTCPredefinedVariable_UserAgent;
 
 extern NSString *const kTCPredefinedVariable_JailBroken;
 extern NSString *const kTCPredefinedVariable_ColdStarts;

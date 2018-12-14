@@ -27,7 +27,8 @@
     {
         TCUnknownRequestType, /** an unknown network request. Does nothing */
         TCHTTPRequestType, /** An HTTP GET Request */
-        TCSegmentRequestType
+        TCSegmentRequestType,
+        TCPrivacyConfigurationRequestType
     } TCRequestTypes;
 
     + (BOOL) isValidURL: (NSString *) url;

@@ -8,10 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "TagCommanderExample.h"
 #import "TCAppDelegate.h"
-#import <TCSDK/TagCommander.h>
 #import <TCCore/TCDebug.h>
 #import <TCCore/TCLogger.h>
-#import <TCSDK/TCSDK.h>
+#import <TCSDK/TagCommander.h>
 #import <TCPrivacy/TCMobilePrivacy.h>
 
 @implementation TagCommanderExample
@@ -23,20 +22,14 @@
     [TCDebug setNotificationLog: YES];
 
     TagCommander *tc = [[TagCommander alloc] initWithSiteID: siteID andContainerID: containerID];
-    
-    [[TCMobilePrivacy sharedInstance] setSiteID: siteID TCInstance: tc AndVersion: @"001"];
+    [[TCMobilePrivacy sharedInstance] setSiteID: siteID privacyID: 2 andTCInstance: tc];
+    [[TCMobilePrivacy sharedInstance] setUserID: @"12345"];
     return tc;
 }
 
 + (TagCommander *) tagcommander
 {
     return [self tagcommanderWithSiteID: TC_SITE_ID withContainerID: TC_CONTAINER_ID];
-}
-
-+ (TagCommander *) getTagcommander
-{
-    TCAppDelegate *appDelegate = (TCAppDelegate *) [[UIApplication sharedApplication] delegate];
-    return appDelegate->tc;
 }
 
 + (NSString *) buildPageNameWithChapter: (NSString *) chapter subChapter: (NSString *) subChapter screen: (NSString *) screen andClick: (NSString *) click
@@ -62,20 +55,6 @@
  */
 + (void) sendScreenEvent: (NSString *) pageName withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] getTagcommander];
-
-    [tc addData: @"#EVENT#" withValue: @"screen"];
-    [tc addData: @"#PAGE_NAME#" withValue: pageName];
-    [tc addData: @"#RATING#" withValue: rating];
-    [tc addData: @"#RESTAURANT_NAME#" withValue: restaurant];
-
-    TCProduct *product = [[TCProduct alloc] init];
-    product.ID = @"1234";
-    product.name = @"niceProduct";
-    [product.customProperties setObject: @"vaule8" forKey: @"COD8"];
-    [tc addData: @"#ORDER_PRODUCT#" withProduct: product];
-
-    [tc sendData];
 }
 
 /**
@@ -87,14 +66,5 @@
  */
 + (void) sendClickEvent: (NSString *) pageName forClick: (NSString *) clickType withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] getTagcommander];
-
-    [tc addData: @"#EVENT#" withValue: @"click"];
-    [tc addData: @"#CLICK_TYPE#" withValue: clickType];
-    [tc addData: @"#RATING#" withValue: rating];
-    [tc addData: @"#PAGE_NAME#" withValue: pageName];
-    [tc addData: @"#RESTAURANT_NAME#" withValue: restaurant];
-
-    [tc sendData];
 }
 @end

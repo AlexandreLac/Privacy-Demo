@@ -1,7 +1,6 @@
 #import <MacTypes.h>
 #import "TCRestaurantDetailViewController.h"
 #import "TagCommanderExample.h"
-#import <TCSDK/TCSDK.h>
 
 @implementation TCRestaurantDetailViewController
 @synthesize locationView;
@@ -15,19 +14,19 @@
 //    self.webView2 = [[UIWebView alloc] initWithFrame: self.view.frame];
 //    [self.webView2 setUserInteractionEnabled: true];
 //    [self.webView2 setMultipleTouchEnabled: true];
-    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
+//    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
 
-    self.webView = [[WKWebView alloc] initWithFrame: self.view.frame configuration: theConfiguration];
+//    self.webView = [[WKWebView alloc] initWithFrame: self.view.frame configuration: theConfiguration];
 //    [self.webView setNavigationDelegate: self];
 //    [self.webView setUIDelegate: self];
-    [self.webView setUserInteractionEnabled: true];
+//    [self.webView setUserInteractionEnabled: true];
 //    [self.webView setAllowsBackForwardNavigationGestures: true];
 //    [self.webView setExclusiveTouch: true];
-    [self.webView setMultipleTouchEnabled: true];
+//    [self.webView setMultipleTouchEnabled: true];
 
-    NSURL *nsurl = [NSURL URLWithString: @"http://marieetpierre.com/jjz.html"];
-    NSURLRequest *nsrequest = [NSURLRequest requestWithURL: nsurl];
-    [self.webView loadRequest: nsrequest];
+//    NSURL *nsurl = [NSURL URLWithString: @"http://marieetpierre.com/jjz.html"];
+//    NSURLRequest *nsrequest = [NSURLRequest requestWithURL: nsurl];
+//    [self.webView loadRequest: nsrequest];
 
 //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"No network connection"
 //                                                    message: @"You must be connected to the internet to use this app."
@@ -138,7 +137,7 @@
     }
 }
 
-- (IBAction)ratingSliderChanged:(UISlider *)sender
+- (IBAction) ratingSliderChanged: (UISlider *) sender
 {
 }
 

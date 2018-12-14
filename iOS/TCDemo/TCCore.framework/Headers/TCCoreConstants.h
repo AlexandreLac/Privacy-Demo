@@ -36,6 +36,8 @@ extern NSString *const kTCNotification_HTTPRequestError;
 extern NSString *const kTCNotification_HTTPResponse;
 extern NSString *const kTCNotification_SegmentRequest;
 extern NSString *const kTCNotification_SegmentResponse;
+extern NSString *const kTCNotification_ConfigurationRequest;
+extern NSString *const kTCNotification_ConfigurationResponse;
 
 #pragma mark Internet Notifications
 extern NSString *const kTCNotification_InternetUp;
@@ -58,7 +60,6 @@ extern NSString *const kTCNotification_OnForeground;
 extern NSString *const kTCNotification_Unknown;
 extern NSString *const kTCNotification_StoppingTheSDK;
 extern NSString *const kTCNotification_StartingTheSDK;
-extern NSString *const kTCNotification_ConsentOutdated;
 
 #pragma mark - notification userInfo
 extern NSString *const kTCUserInfo_DataKey;
@@ -80,6 +81,7 @@ extern NSString *const kTCPredefinedVariable_LimitUserTrackingEnabled;
 
 extern NSString *const kTCPredefinedVariable_SDKID;
 extern NSString *const kTCPredefinedVariable_NormalizedID;
+extern NSString *const kTCPredefinedVariable_UserAgent;
 
 extern NSString *const kTCPredefinedVariable_Connexion;
 

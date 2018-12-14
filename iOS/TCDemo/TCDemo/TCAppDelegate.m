@@ -1,7 +1,7 @@
-#import <TCSDK/TCSDK.h>
 #import <TCCore/TCCore.h>
 #import "TCAppDelegate.h"
 #import "TagCommanderExample.h"
+#import <TCPrivacy/TCMobilePrivacy.h>
 
 @implementation TCAppDelegate
 
@@ -9,10 +9,22 @@
 
 - (BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions: (NSDictionary *) launchOptions
 {
+    [[TCMobilePrivacy sharedInstance] registerCallback: self];
     tc = [TagCommanderExample tagcommander];
 
     return YES;
 }
+
+- (void) consentUpdated: (NSDictionary *) consent
+{
+    for (NSString *key in consent)
+    {
+        NSString *value = consent[key];
+        [[TCLogger sharedInstance] logMessage: [NSString stringWithFormat: @"callback: %@:%@", key, value]
+                                    withLevel: TCLogLevel_Error];
+    }
+}
+
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*) deviceToken
 {

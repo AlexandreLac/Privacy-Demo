@@ -20,6 +20,10 @@ extern NSString *const kTCSavedCategories;
 
 extern unsigned long long const kTCConsentExpirationDuration;
 
+// Privacy Configuration
+extern NSString *const kTCConfigurationOfflineKey;
+extern NSString *const kTCConfigurationCDNURLStringFormat;
+
 @end
 
 #endif

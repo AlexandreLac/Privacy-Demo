@@ -8,6 +8,7 @@
 
 #import "TCPrivacyController.h"
 #import <TCPrivacy/TCMobilePrivacy.h>
+#import <TCPrivacy/TCPrivacyCenterViewController.h>
 
 @implementation TCPrivacyController
 
@@ -44,7 +45,15 @@
 - (void) viewDidAppear: (BOOL) animated
 {
     [super viewDidAppear: animated];
-    [[TCMobilePrivacy sharedInstance] viewConsent];
+
+    TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
+                                                                   style: UIBarButtonItemStylePlain
+                                                                  target: nil
+                                                                  action: nil];
+    
+    self.navigationItem.backBarButtonItem = backButton;
+    [self.navigationController pushViewController: PCM animated: YES];
 }
 
 @end

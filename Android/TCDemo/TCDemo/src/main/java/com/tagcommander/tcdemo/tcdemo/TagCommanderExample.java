@@ -1,14 +1,22 @@
 package com.tagcommander.tcdemo.tcdemo;
 
-import android.Manifest;
 import android.content.Context;
 import android.util.Log;
-import com.tagcommander.lib.TCAppVars;
-import com.tagcommander.lib.TCLocation;
+
+import com.iab.gdpr_android.consent.VendorConsent;
+import com.iab.gdpr_android.consent.implementation.v1.VendorConsentBuilder;
+import com.iab.gdpr_android.consent.range.RangeEntry;
+import com.iab.gdpr_android.consent.range.SingleRangeEntry;
+import com.iab.gdpr_android.consent.range.StartEndRangeEntry;
 import com.tagcommander.lib.TagCommander;
 import com.tagcommander.lib.core.TCDebug;
-import com.tagcommander.lib.core.TCPermissions;
 import com.tagcommander.lib.privacy.TCPrivacy;
+import com.iab.gdpr_android.consent.VendorConsent;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 public class TagCommanderExample
 {
@@ -48,14 +56,48 @@ public class TagCommanderExample
             TCDebug.setNotificationLog(true);
             TC = new TagCommander(TC_SITE_ID, TC_CONTAINER_ID, context);
 
-            if (TCPermissions.checkForPermission(context, Manifest.permission.ACCESS_FINE_LOCATION))
-            {
-                TCLocation.getInstance(context);
-            }
+//            if (TCPermissions.checkForPermission(context, Manifest.permission.ACCESS_FINE_LOCATION))
+//            {
+//                TCLocation.getInstance(context);
+//            }
 
             TC.addPermanentData("MY_ID", "12345");
-            TCPrivacy.getInstance().setSiteIDAppContextAndTCInstance(TC_SITE_ID, context, TC);
-            TCPrivacy.getInstance().setUserID("MY_ID");
+            TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextAndTCInstance(TC_SITE_ID, 3, context, TC);
+            TCPrivacy.getInstance().setUserID("12345");
+
+            final List<RangeEntry> rangeEntries = Arrays.asList(
+                    new SingleRangeEntry(1),
+                    new StartEndRangeEntry(100,400)
+            );
+
+            // https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Consent%20string%20and%20vendor%20list%20formats%20v1.1%20Final.md#example-vendor-consent-string-
+            VendorConsent vendorConsent = new VendorConsentBuilder()
+                    //ok
+                    .withConsentRecordCreatedOn(new Date(System.currentTimeMillis()))
+                    .withConsentRecordLastUpdatedOn(new Date(System.currentTimeMillis()))
+                    .withCmpID(90)
+                    .withCmpVersion(1)
+                    //Defines the Screen number in the CMP where consent was given. The screen number is CMP and CmpVersion specific, and is for logging proof of consent
+                    .withConsentScreenID(1)
+                    .withConsentLanguage("FR")
+                    .withDefaultConsent(false)
+                    // https://vendorlist.consensu.org/vendorlist.json current : 123
+                    .withVendorListVersion(123)
+
+                    // NOK
+                    .withMaxVendorId(999)
+                    .withVendorEncodingType(1)
+                    .withRangeEntries(rangeEntries)
+
+                    .build();
+
+            // IABConsent_CMPPresent
+            // IABConsent_SubjectToGDPR
+            // IABConsent_ConsentString
+            // IABConsent_ParsedPurposeConsents
+            // IABConsent_ParsedVendorConsents
+
+            Log.e("JIBA", "consent String: " + vendorConsent.toString());
         }
     }
 
@@ -103,21 +145,6 @@ public class TagCommanderExample
      */
     public void SendPageEvent(String pageName, String restaurant, String rating)
     {
-        // /!\ This method is tagged using the 4.+ ways of tagging, with addData.
-        TC.addData("#EVENT#", "screen");
-        TC.addData("#PAGE_NAME#", pageName);
-
-        if (restaurant != null && !restaurant.isEmpty())
-        {
-            TC.addData("#RESTAURANT_NAME#", restaurant);
-        }
-
-        if (rating != null && !rating.isEmpty())
-        {
-            TC.addData("#RATING#", rating);
-        }
-
-        TC.sendData();
     }
 
     /**
@@ -128,16 +155,5 @@ public class TagCommanderExample
      */
     public void SendClickEvent(String pageName, String clickType)
     {
-        /**
-         * /!\ This method is tagged using the 3.x ways of tagging
-         * It is still working, but we recommend using the one described in SendPageEvent just above.
-         */
-        TCAppVars appVars = new TCAppVars();
-        appVars.put("#EVENT#", "click");
-
-        appVars.put("#CLIC_TYPE#", clickType);
-        appVars.put("#PAGE_NAME#", pageName);
-
-        TC.execute(appVars);
     }
 }
