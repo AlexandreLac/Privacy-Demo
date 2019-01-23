@@ -12,48 +12,29 @@
 
 @implementation TCPrivacyController
 
-- (void) switchToggled: (id) sender
+- (void) buttonToggled: (id) sender
 {
-    UISwitch *mySwitch = (UISwitch *) sender;
-
-    if ([mySwitch isOn])
-    {
-        NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
-        [consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
-        [consent setObject: @"1" forKey: @"PRIVACY_CAT_2"];
-        [consent setObject: @"0" forKey: @"PRIVACY_CAT_3"];
-        [[TCMobilePrivacy sharedInstance] saveConsent: consent];
-    }
-    else
-    {
-        NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
-        [consent setObject: @"0" forKey: @"PRIVACY_CAT_1"];
-        [consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
-        [consent setObject: @"0" forKey: @"PRIVACY_CAT_3"];
-        [[TCMobilePrivacy sharedInstance] saveConsent: consent];
-    }
-}
-
-- (void) viewDidLoad
-{
-    [super viewDidLoad];
-    [self.privacySwitch addTarget: self
-                           action: @selector(switchToggled:)
-                 forControlEvents: UIControlEventTouchUpInside];
-}
-
-- (void) viewDidAppear: (BOOL) animated
-{
-    [super viewDidAppear: animated];
-
     TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
                                                                    style: UIBarButtonItemStylePlain
                                                                   target: nil
                                                                   action: nil];
-    
+
     self.navigationItem.backBarButtonItem = backButton;
     [self.navigationController pushViewController: PCM animated: YES];
+}
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    [self.displayPrivacySwitch addTarget: self
+                                  action: @selector(buttonToggled:)
+                        forControlEvents: UIControlEventTouchUpInside];
+}
+
+- (void) viewDidAppear: (BOOL) animated
+{
+    [super viewDidAppear: animated];
 }
 
 @end

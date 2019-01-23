@@ -1,13 +1,20 @@
 package com.tagcommander.tcdemo.tcdemo;
 
+import android.Manifest;
 import android.content.Context;
 import android.util.Log;
 
+import com.tagcommander.lib.TCAppVars;
+import com.tagcommander.lib.TCLocation;
 import com.tagcommander.lib.TagCommander;
 import com.tagcommander.lib.core.TCDebug;
+import com.tagcommander.lib.core.TCPermissions;
 import com.tagcommander.lib.privacy.TCPrivacy;
+import com.tagcommander.lib.privacy.TCPrivacyCallbacks;
 
-public class TagCommanderExample
+import java.util.Map;
+
+public class TagCommanderExample implements TCPrivacyCallbacks
 {
     private static TagCommanderExample sharedTagCommanderExample;
     private TagCommander TC;
@@ -45,13 +52,14 @@ public class TagCommanderExample
             TCDebug.setNotificationLog(true);
             TC = new TagCommander(TC_SITE_ID, TC_CONTAINER_ID, context);
 
-//            if (TCPermissions.checkForPermission(context, Manifest.permission.ACCESS_FINE_LOCATION))
-//            {
-//                TCLocation.getInstance(context);
-//            }
+            if (TCPermissions.checkForPermission(context, Manifest.permission.ACCESS_FINE_LOCATION))
+            {
+                TCLocation.getInstance(context);
+            }
 
             TC.addPermanentData("MY_ID", "12345");
-            TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextAndTCInstance(TC_SITE_ID, 3, context, TC);
+            TCPrivacy.getInstance().registerCallback(this);
+            TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextAndTCInstance(TC_SITE_ID, TC_CONTAINER_ID, context, TC);
             TCPrivacy.getInstance().setUserID("12345");
         }
     }
@@ -100,6 +108,21 @@ public class TagCommanderExample
      */
     public void SendPageEvent(String pageName, String restaurant, String rating)
     {
+        // /!\ This method is tagged using the 4.+ ways of tagging, with addData.
+        TC.addData("#EVENT#", "screen");
+        TC.addData("#PAGE_NAME#", pageName);
+
+        if (restaurant != null && !restaurant.isEmpty())
+        {
+            TC.addData("#RESTAURANT_NAME#", restaurant);
+        }
+
+        if (rating != null && !rating.isEmpty())
+        {
+            TC.addData("#RATING#", rating);
+        }
+
+        TC.sendData();
     }
 
     /**
@@ -110,5 +133,32 @@ public class TagCommanderExample
      */
     public void SendClickEvent(String pageName, String clickType)
     {
+        /**
+         * /!\ This method is tagged using the 3.x ways of tagging
+         * It is still working, but we recommend using the one described in SendPageEvent just above.
+         */
+        TCAppVars appVars = new TCAppVars();
+        appVars.put("#EVENT#", "click");
+
+        appVars.put("#CLIC_TYPE#", clickType);
+        appVars.put("#PAGE_NAME#", pageName);
+
+        TC.execute(appVars);
+    }
+
+    @Override
+    public void consentUpdated(Map<String, String> map)
+    {
+        // Pass information to your other solutions from here.
+        for (String key : map.keySet())
+        {
+            Log.e("TCDemo", key + " : " + map.get(key));
+        }
+    }
+
+    @Override
+    public void consentOutdated()
+    {
+        // Use this to know that it's time to display privacy center again.
     }
 }

@@ -3,28 +3,28 @@
         "update": "2018-10-23",
         "version": "1",
         "content": "\nThis is your sample privacy center\n",
-        "saveButton": "Save"
+        "saveButton": "Valider"
     },
     "customisation": {
         "content": {
-            "fontcolor": "#ffffff",
-            "backgroundcolor": "#333333"
+            "fontcolor": "#333333",
+            "backgroundcolor": "#ffffff"
         },
         "button": {
             "fontcolor": "#ffffff",
-            "backgroundcolor": "#6faae5"
+            "backgroundcolor": "#0A78E3"
         }
     },
     "global_consent" : {
-        "name" : "All categories", "ID": "0", "description" : "Preferences for all services\n"
+        "name" : "All categories", "ID": "0", "description" : "Preferences for all services\n\n"
     },
     "categories": [
-        { "name" : "Statistics", "ID" : "1234", "description" : "These cookies allow us analyze user behavior on the site, measure and improve performance and the quality of our service." },
-        { "name" : "Advertising", "ID" : "1444", "description" : "These cookies allow us display adverts matching your interests on the websites you visit." },
-        { "name" : "Details", "ID" : "4", "description" : "Here you can select the vendors.", "subcategories": [
-               { "name" : "GA", "ID" : "5", "description" : "Should we send information to GA" },
-               { "name" : "Xiti", "ID" : "6", "description" : "Should we send information to AT Internet" },
-               { "name" : "Vendor3", "ID" : "7", "description" : "Should we send information to this vendor3" }
-                                                                                                                ]}
-                   ]
+        { "name" : "Cookies necéssaires", "ID" : "1", "description" : "Les cookies techniques sont indispensables au bon fonctionnement de nos services et ne peuvent pas être désactivés" },
+        { "name" : "Mesure d'audience", "ID" : "2", "description" : "Désactiver cette option nous empêchera de mesurer l'audience, de faire des statistiques et d'améliorer la qualité de nos services." },
+        { "name" : "Personalisation de contenus", "ID" : "3", "description" : "Désactiver cette option nous empêchera de suivre votre navigation et de réaliser des profils, afin de vous faire des recommandations de contenus pour une expérience personnalisée."}
+        { "name" : "Réseaux sociaux", "ID" : "4", "description" : "Désactiver cette option empêchera les réseaux sociaux de suivre votre navigation sur nos services."}
+        { "name" : "Publicité ciblée", "ID" : "5", "description" : "Nous diffusons des publicités afin de pouvoir proposer nos services gratuitement à tous les utilisateurs. Les cookies et les profils permettent de vous proposer des publicités plus pertinentes car adaptées à vos centres d'intérêt, et de mesurer l'efficacité des campagnes publicitaires. Désactiver cette option empêchera de suivre votre navigation et de réaliser des profils, afin de vous proposer des publicités adaptées. Vous ne recevrez pas moins de publicités, mais des publicités ne correspondant pas nécessairement à vos centres d'intérêt."
+            
+        }
+    ]
 }
