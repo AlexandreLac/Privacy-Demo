@@ -33,6 +33,12 @@
     return [self tagcommanderWithSiteID: TC_SITE_ID withContainerID: TC_CONTAINER_ID];
 }
 
++ (TagCommander *) getTagcommander
+{
+    TCAppDelegate *appDelegate = (TCAppDelegate *) [[UIApplication sharedApplication] delegate];
+    return appDelegate->tc;
+}
+
 + (NSString *) buildPageNameWithChapter: (NSString *) chapter subChapter: (NSString *) subChapter screen: (NSString *) screen andClick: (NSString *) click
 {
     if (chapter == nil) chapter = @"";
@@ -56,7 +62,7 @@
  */
 + (void) sendScreenEvent: (NSString *) pageName withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] tagcommander];
+    TagCommander *tc = [[self class] getTagcommander];
 
     [tc addData: @"#PAGE_NAME#" withValue: pageName];
     [tc addData: @"#RATING#" withValue: rating];
@@ -74,7 +80,7 @@
  */
 + (void) sendClickEvent: (NSString *) pageName forClick: (NSString *) clickType withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] tagcommander];
+    TagCommander *tc = [[self class] getTagcommander];
     
     [tc addData: @"#EVENT#" withValue: @"click"];
     [tc addData: @"#CLICK_TYPE#" withValue: clickType];
