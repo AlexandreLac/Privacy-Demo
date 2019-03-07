@@ -191,9 +191,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="26">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="om6-f8-UD5"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Detail" id="26"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cancelDetailButton" destination="SOS-oM-nIm" id="TO8-QB-Hdw"/>
@@ -233,17 +231,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Map" id="YKr-OP-T5D">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="9Vs-Ki-fTz">
-                            <connections>
-                                <action selector="refreshMap:" destination="Fa5-yJ-K96" id="Haq-z1-unk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map" id="YKr-OP-T5D"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="RKE-pw-tOB" id="rcu-Rn-qYB"/>
-                        <outlet property="refreshButton" destination="9Vs-Ki-fTz" id="tb7-9A-FHO"/>
                         <segue destination="21" kind="push" identifier="showDetail" id="4bf-VN-JXu"/>
                     </connections>
                 </viewController>
@@ -349,31 +340,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gaq-8p-rkj">
-                                <rect key="frame" x="137" y="162" width="101" height="30"/>
+                                <rect key="frame" x="139" y="162" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Toggle Privacy"/>
+                                <state key="normal" title="Check Privacy"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable SDK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="roH-On-3wN">
-                                <rect key="frame" x="0.0" y="98" width="375" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="EnableSDK" id="Rs3-Rs-6oc" customClass="TC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="M3i-n5-NYQ">
-                            <connections>
-                                <action selector="refreshMap:" destination="KAi-bU-lJP" id="H4E-2j-NSF"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="EnableSDK" id="Rs3-Rs-6oc" customClass="TC"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="displayPrivacySwitch" destination="gaq-8p-rkj" id="TtF-zX-uv4"/>
+                        <outlet property="privacyBTN" destination="gaq-8p-rkj" id="GCh-rZ-98I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Few-sT-pg0" userLabel="First Responder" sceneMemberID="firstResponder"/>

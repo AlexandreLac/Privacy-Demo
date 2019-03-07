@@ -24,10 +24,6 @@ extern unsigned long long const kTCConsentExpirationDuration;
 extern NSString *const kTCConfigurationOfflineKey;
 extern NSString *const kTCConfigurationCDNURLStringFormat;
 
-// type_actions
-extern NSString *const kTCTypeActionViewPrivacyCenter;
-extern NSString *const kTCTypeActionSavePrivacyCenter;
-
 @end
 
 #endif

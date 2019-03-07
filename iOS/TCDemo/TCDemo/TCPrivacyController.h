@@ -11,6 +11,6 @@
 
 @interface TCPrivacyController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UIButton *displayPrivacySwitch;
+@property (retain, nonatomic) IBOutlet UIButton *privacyBTN;
 
 @end

@@ -9,6 +9,8 @@
     TagCommander *tc;
 }
 
+- (void) privacyUpdated: (NSDictionary*) consent;
+
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TagCommander *tc;
 

@@ -41,6 +41,9 @@
 - (NSString *) getPostData: (TCAppVars *) appVars;
 - (void) enableRunningInBackground;
 
+- (void) deactivateSDK;
+- (void) activateSDK;
+
 #pragma mark - public properties
 @property (nonatomic, assign) int containerID;
 @property (nonatomic, assign) int siteID;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TCPrivacyCenterViewController : UIViewController<UIScrollViewDelegate, UIWebViewDelegate>
+@interface TCPrivacyCenterViewController : UIViewController<UIScrollViewDelegate>
 
 - (NSString *) getSaveButtonText;
 
@@ -24,9 +24,6 @@
 @property (nonatomic, retain) NSMutableArray *categoryUIObjects;
 @property (nonatomic, retain) NSMutableDictionary *categoryLinks;
 @property (nonatomic, retain) NSDictionary *savedConsent;
-
-@property (nonatomic, retain) NSMutableArray *privacyButtons;
-@property (nonatomic, retain) NSMutableArray *privacyUrls;
 
 @property (nonatomic, retain) NSMutableDictionary *customisation;
 

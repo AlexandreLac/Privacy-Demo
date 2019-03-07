@@ -15,7 +15,6 @@
 
 @interface TagCommanderExample : NSObject
 
-+ (TagCommander *) getTagcommander;
 + (TagCommander *) tagcommander;
 
 + (NSString *) buildPageNameWithChapter: (NSString *) chapter subChapter: (NSString *) subChapter screen: (NSString *) screen andClick: (NSString *) click;

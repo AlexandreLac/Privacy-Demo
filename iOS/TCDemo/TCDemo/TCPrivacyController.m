@@ -12,7 +12,7 @@
 
 @implementation TCPrivacyController
 
-- (void) buttonToggled: (id) sender
+- (void) buttonClicked: (id) sender
 {
     TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
@@ -27,9 +27,9 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    [self.displayPrivacySwitch addTarget: self
-                                  action: @selector(buttonToggled:)
-                        forControlEvents: UIControlEventTouchUpInside];
+    [self.privacyBTN addTarget: self
+                        action: @selector(buttonClicked:)
+              forControlEvents: UIControlEventTouchUpInside];
 }
 
 - (void) viewDidAppear: (BOOL) animated

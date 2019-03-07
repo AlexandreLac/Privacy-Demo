@@ -22,8 +22,9 @@
     [TCDebug setNotificationLog: YES];
 
     TagCommander *tc = [[TagCommander alloc] initWithSiteID: siteID andContainerID: containerID];
-    [[TCMobilePrivacy sharedInstance] setSiteID: siteID privacyID: containerID andTCInstance: tc];
+    [[TCMobilePrivacy sharedInstance] setSiteID: siteID privacyID: 2 andTCInstance: tc];
     [[TCMobilePrivacy sharedInstance] setUserID: @"12345"];
+
     return tc;
 }
 
@@ -55,7 +56,7 @@
  */
 + (void) sendScreenEvent: (NSString *) pageName withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] getTagcommander];
+    TagCommander *tc = [[self class] tagcommander];
 
     [tc addData: @"#PAGE_NAME#" withValue: pageName];
     [tc addData: @"#RATING#" withValue: rating];
@@ -73,7 +74,7 @@
  */
 + (void) sendClickEvent: (NSString *) pageName forClick: (NSString *) clickType withRestaurant: (NSString *) restaurant andRating: (NSString *) rating
 {
-    TagCommander *tc = [[self class] getTagcommander];
+    TagCommander *tc = [[self class] tagcommander];
     
     [tc addData: @"#EVENT#" withValue: @"click"];
     [tc addData: @"#CLICK_TYPE#" withValue: clickType];
