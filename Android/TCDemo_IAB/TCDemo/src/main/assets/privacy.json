@@ -1,0 +1,94 @@
+{
+    "information": {
+        "update": "2020-02-05",
+        "version": "3",
+        "content": "",
+        "vendors": "18,8,467,310"
+    },
+    "texts": {
+        "generic": {
+            "saveButton": "Save & Exit",
+            "detailButton": "Details",
+            "acceptAllButton": "Accept All",
+            "refuseAllButton": "Refuse All",
+            "vendorButton": "Vendors",
+            "purposeButton": "Purposes",
+            "legalButton": "Legals",
+            "backButton": "Back",
+            "purposeDef": "Purposes",
+            "consentDef": "Consent",
+            "legIntPurposeDef": "Legitimate Interest",
+            "flexiblePurposeDef": "Flexible Purpose",
+            "specialPurposeDef": "Special Purpose",
+            "featureDef": "Features",
+            "specialFeatureDef": "Special Features",
+            "partnersLinkText": "our partners"
+        },
+        "popup": {
+            "title": "We respect your privacy",
+            "content": "We and our partners use technologies, such as cookies, and process personal data, such as IP addresses and cookie identifiers, to personalise ads and content based on your interests, measure the performance of ads and content, and derive insights about the audiences who saw ads and content. Click below to consent to the use of this technology and the processing of your personal data for these purposes. You can change your mind and change your consent choices at any time by returning to this site.\n",
+            "purposeTitle": "We and our partners:",
+            "specialPurposeTitle": "We need your consent for all the purposes above, but we have legitimate interest for these purposes:",
+            "featureTitle": "For some of the purposes above we and our partners:",
+            "specialFeatureTitle": "For some of the purposes above we and our partners:"
+        },
+        "purposes": {
+            "title": "Find out more about how your personal data is processed and set your preferences below.",
+            "content": "You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data."
+        },
+        "vendors": {
+            "title": "See the partners we work with below. Expend each one to see how they process your data.",
+            "content": "You can set consent preferences for individual third-party partners we work with below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policy links for more information and to object to such processing.",
+            "privacyPolicyText": "Privacy Policy"
+        }
+    },
+    "texts_fr": {
+        "generic": {
+            "saveButton": "Sauvegarder",
+            "detailButton": "Détails",
+            "acceptAllButton": "Tout Accepter",
+            "refuseAllButton": "Tout Refuser",
+            "vendorButton": "Partenaires",
+            "purposeButton": "Fonctionnalité",
+            "legalButton": "Déscription légale",
+            "backButton": "Retour",
+            "purposeDef": "Finalité",
+            "consentDef": "Consentement",
+            "legIntPurposeDef": "Intérêt légitime",
+            "flexiblePurposeDef": "Finalité flexible",
+            "specialPurposeDef": "Finalité Spéciale",
+            "featureDef": "Fonctionnalité",
+            "specialFeatureDef": "Fonctionnalité Spéciale",
+            "partnersLinkText": "nos partenaires"
+        },
+        "popup": {
+            "title": "Nous respectons votre vie privée.",
+            "content": "Nos partenaires et nous-même utilisons des technologies tel que les cookies, and process personal data, such as IP addresses and cookie identifiers, to personalise ads and content based on your interests, measure the performance of ads and content, and derive insights about the audiences who saw ads and content. Click below to consent to the use of this technology and the processing of your personal data for these purposes. You can change your mind and change your consent choices at any time by returning to this site.\n",
+            "purposeTitle": "Nos partenaires et nous-même:",
+            "specialPurposeTitle": "Nous avons besoin de votre consentement for all the purposes above, but we have legitimate interest for these purposes:",
+            "featureTitle": "Pour certaines de ces fonctionalitée above we and nos partenaires:",
+            "specialFeatureTitle": "Pour certaines de ces fonctionalitée above we and nos partenaires:"
+        },
+        "purposes": {
+            "title": "Comment c'est qu'on utilise vos datas?",
+            "content": "Changez vos préférences avec l'écran ci-dessous. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data."
+        },
+        "vendors": {
+            "title": "Voici les partenaires de la liste IAB. Expend each one to see how they process your data.",
+            "content": "Pour chacun d'entre eux, vous pouvez changer les authorisations de traitement de données. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policy links for more information and to object to such processing.",
+            "privacyPolicyText": "Politique de confidentialité"
+        }
+    },
+    "customisation": {
+        "content": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#333333",
+            "bordercolor": "#aaaaaa"
+        },
+        "button": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#6faae5",
+            "linkcolor": "#0645ad"
+        }
+    }
+}
