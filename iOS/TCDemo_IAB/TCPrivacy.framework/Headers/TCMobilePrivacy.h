@@ -39,7 +39,6 @@ SINGLETON_CLASS_H(TCMobilePrivacy)
 - (void) disableSDK;
 - (void) registerCallback: (id<TCPrivacyCallbacks>) listener;
 + (NSArray *) getSavedCategoriesAndVendors;
-- (void) saveConsentString: (NSDictionary *) consent;
 - (void) useCustomPublisherRestrictions;
 
 - (void) saveCustomCategoriesInSharedPreferences: (NSDictionary *) consent;

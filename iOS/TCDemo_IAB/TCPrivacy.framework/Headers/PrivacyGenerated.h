@@ -16,6 +16,7 @@ extern NSString *const kTCReleaseDate;
 extern NSString *const kTCReleaseTime;
 
 #define TC_USE_IDFA
+#define TC_USE_IAB
 
 
 #endif //__PRIVACY_GENERATED_H__

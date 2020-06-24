@@ -1,6 +1,0 @@
-framework module TCPartners {
-  umbrella header "TCPartners.h"
-
-  export *
-  module * { export * }
-}
