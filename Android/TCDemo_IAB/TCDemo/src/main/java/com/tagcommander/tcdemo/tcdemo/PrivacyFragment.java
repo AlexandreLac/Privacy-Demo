@@ -4,10 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ToggleButton;
+
+import com.tagcommander.lib.core.TCLogger;
+import com.tagcommander.lib.privacy.TCPrivacyAPI;
 
 public class PrivacyFragment extends Fragment implements View.OnClickListener
 {
@@ -64,6 +68,7 @@ public class PrivacyFragment extends Fragment implements View.OnClickListener
         switch (view.getId())
         {
             case R.id.togglePrivacy:
+                TCLogger.getInstance().logMessage("Is consent already given: " + TCPrivacyAPI.isConsentAlreadyGiven(getContext()), Log.ERROR);
                 Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
                 startActivity(PCM);
                 break;

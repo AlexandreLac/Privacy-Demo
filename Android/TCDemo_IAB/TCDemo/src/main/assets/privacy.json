@@ -1,7 +1,7 @@
 {
     "information": {
         "update": "2020-02-05",
-        "version": "3",
+        "version": "71",
         "content": "",
         "vendors": "18,8,467,310"
     },
@@ -22,7 +22,8 @@
             "specialPurposeDef": "Special Purpose",
             "featureDef": "Features",
             "specialFeatureDef": "Special Features",
-            "partnersLinkText": "our partners"
+            "partnersLinkText": "our partners",
+            "relatedVendorsButton" : "show related vendors"
         },
         "popup": {
             "title": "We respect your privacy",
@@ -59,7 +60,8 @@
             "specialPurposeDef": "Finalité Spéciale",
             "featureDef": "Fonctionnalité",
             "specialFeatureDef": "Fonctionnalité Spéciale",
-            "partnersLinkText": "nos partenaires"
+            "partnersLinkText": "nos partenaires",
+            "relatedVendorsButton" : "show related vendors"
         },
         "popup": {
             "title": "Nous respectons votre vie privée.",
@@ -71,8 +73,7 @@
         },
         "purposes": {
             "title": "Comment c'est qu'on utilise vos datas?",
-            "content": "Changez vos préférences avec l'écran ci-dessous. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data."
-        },
+            "content": "Changez vos préférences avec l'écran ci-dessous. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data."},
         "vendors": {
             "title": "Voici les partenaires de la liste IAB. Expend each one to see how they process your data.",
             "content": "Pour chacun d'entre eux, vous pouvez changer les authorisations de traitement de données. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policy links for more information and to object to such processing.",
@@ -88,6 +89,7 @@
         "button": {
             "fontcolor": "#ffffff",
             "backgroundcolor": "#6faae5",
+            "disabledBackground" : "#4B555D",
             "linkcolor": "#0645ad"
         }
     }

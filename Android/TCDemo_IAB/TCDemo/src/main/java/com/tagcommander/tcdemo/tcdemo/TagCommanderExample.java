@@ -167,4 +167,10 @@ public class TagCommanderExample implements TCPrivacyCallbacks
     {
 
     }
+
+    @Override
+    public void significantChangesInPrivacy()
+    {
+        // Use this to perform action when there are significat changes
+    }
 }
