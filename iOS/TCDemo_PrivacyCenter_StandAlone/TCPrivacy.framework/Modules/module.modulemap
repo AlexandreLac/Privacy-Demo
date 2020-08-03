@@ -1,0 +1,6 @@
+framework module TCPrivacy {
+  umbrella header "TCPrivacy.h"
+
+  export *
+  module * { export * }
+}

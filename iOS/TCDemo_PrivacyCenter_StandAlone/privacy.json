@@ -1,0 +1,62 @@
+{
+    "information": {
+        "update": "2018-10-23",
+        "version": "20",
+        "content": "\nThis is your sample privacy center.",
+        "saveButton": "Save",
+        "privacy_policy_url": "https://www.commandersact.com/en/privacy/",
+        "privacy_policy_text": "Privacy policy",
+        "resetSave": "1"
+    },
+    "customisation": {
+        "content": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#333333"
+        },
+        "button": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#6faae5"
+        }
+    },
+    "global_consent": {
+        "name": "All categories",
+        "ID": "0",
+        "description": "Preferences for all services\n\n"
+    },
+    "categories": [{
+        "name": "Statistics",
+        "ID": "1234",
+        "description": "These cookies allow us analyze user behavior on the site, measure and improve performance and the quality of our service."
+    },
+        {
+            "name": "Advertising",
+            "ID": "1444",
+            "description": "These cookies allow us display adverts matching your interests on the websites you visit.",
+            "privacy_policy_url": "https://www.commandersact.com/en/privacy/1",
+            "privacy_policy_text": "Privacy policy"
+        },
+        {
+            "name": "Details",
+            "ID": "4",
+            "description": "Here you can select the vendors.",
+            "subcategories": [{
+                "name": "GA",
+                "ID": "5",
+                "description": "Should we send information to GA.",
+                "privacy_policy_url": "https://www.google.com/analytics/terms/us.html",
+                "privacy_policy_text": "Privacy policy"
+            },
+                {
+                    "name": "Xiti",
+                    "ID": "6",
+                    "description": "Should we send information to AT Internet."
+                },
+                {
+                    "name": "Vendor3",
+                    "ID": "7",
+                    "description": "Should we send information to this vendor3."
+                }
+            ]
+        }
+    ]
+}
