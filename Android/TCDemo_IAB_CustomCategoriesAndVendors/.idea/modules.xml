@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-TCDemo.iml" filepath="$PROJECT_DIR$/Android-TCDemo.iml" group="TCDemo" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo.iml" group="TCDemo_IAB/TCDemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo.iml" group="TCDemo_IAB_CustomCategoriesAndVendors/TCDemo" />
       <module fileurl="file://$PROJECT_DIR$/TCDemo/TCDemo-TCDemo.iml" filepath="$PROJECT_DIR$/TCDemo/TCDemo-TCDemo.iml" group="TCDemo/TCDemo" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo_IAB.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo_IAB.iml" group="TCDemo_IAB" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo_IAB_CustomCategoriesAndVendors.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo_IAB_CustomCategoriesAndVendors.iml" group="TCDemo_IAB_CustomCategoriesAndVendors" />
     </modules>
   </component>
 </project>

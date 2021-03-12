@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.tagcommander.tcdemo.tcdemo.PrivacyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ToggleButton
+            android:id="@+id/togglePrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toggle Privacy"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The @CommonsWare answer is correct. Android does not support &quot;Full Justification&quot; (or simply &quot;Justification&quot;, as it is sometimes ambiguously referred to).  However, android does support &quot;Flush Left/Right Text Alignment&quot;. See the wikipedia article on Justification for the distinction. Many people consider the concept of 'justification' to encompass full-justification as well as left/right text alignment, which is what they end up searching for when they want to do left/right text alignment. This answer explains how to achieve the left/right text alignment.  It is possible to achieve Flush Left/Right Text Alignment (as opposed to Full Justification, as the question is asking about). To demonstrate I will be using a basic 2-column form (labels in the left column and text fields in the right column) as an example. In this example the text in the labels in the left column will be right-aligned so they appear flush up against their text fields in the right column.  In the XML layout you can get the TextView elements themselves (the left column) to align to the right by adding the following attribute inside all of the TextViews."
+            android:textAllCaps="false"
+            android:justificationMode="inter_word"
+
+            />
+    </LinearLayout>
+
+</FrameLayout>
