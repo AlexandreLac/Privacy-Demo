@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/TCDemo/Android-TCDemo-TCDemo.iml" filepath="$PROJECT_DIR$/TCDemo/Android-TCDemo-TCDemo.iml" group="TCDemo/TCDemo" />
       <module fileurl="file://$PROJECT_DIR$/TCDemo.iml" filepath="$PROJECT_DIR$/TCDemo.iml" group="TCDemo" />
       <module fileurl="file://$PROJECT_DIR$/TCDemo/TCDemo-TCDemo.iml" filepath="$PROJECT_DIR$/TCDemo/TCDemo-TCDemo.iml" group="TCDemo/TCDemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo_PrivacyCenter_And_SDK.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo_PrivacyCenter_And_SDK.iml" group="TCDemo_PrivacyCenter_And_SDK" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo_PrivacyCenter_And_SDK-TCDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/TCDemo/TCDemo_PrivacyCenter_And_SDK-TCDemo.iml" group="TCDemo_PrivacyCenter_And_SDK/TCDemo" />
     </modules>
   </component>
 </project>
